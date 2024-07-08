@@ -7,7 +7,7 @@ Jupyter notebook with Spylon Kernel
 
 
 - [Introduction](#introduction)
-- [Iceberg Features](#outlook-account)
+- [Iceberg Features](#iceberg-features)
   * [Schema Evolution](#add-update-delete-changetype)    
 
  
@@ -30,7 +30,7 @@ Update -- widen the type of a column, struct field, map key, map value, or list 
 Reorder -- change the order of columns or fields in a nested struct
 Iceberg schema updates are metadata changes, so no data files need to be rewritten to perform the update.
 
-####Iceberg_SchemaEvolution.ipynb 
+Iceberg_SchemaEvolution.ipynb 
 This notebook is aimed at running schema evolution cases by adding new column, updating and deleting columns of different datatype.
 
 
