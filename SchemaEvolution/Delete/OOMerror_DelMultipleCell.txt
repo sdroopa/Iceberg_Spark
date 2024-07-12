@@ -1,0 +1,267 @@
+[Stage 1:>                                                          (0 + 1) / 1]
+Exception: java.lang.OutOfMemoryError thrown from the UncaughtExceptionHandler in thread "refresh progress"
+Exception in thread "Spark Context Cleaner" Exception in thread "RemoteBlock-temp-file-clean-thread" java.lang.OutOfMemoryError: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+24/07/12 21:00:40 WARN QueuedThreadPool:
+java.lang.OutOfMemoryError: Java heap space
+Exception in thread "driver-heartbeater" java.lang.OutOfMemoryError: Java heap space
+24/07/12 21:00:40 ERROR Utils: Uncaught exception in thread executor-heartbeater
+java.lang.OutOfMemoryError: Java heap space
+24/07/12 21:00:43 ERROR Executor: Exception in task 0.0 in stage 1.0 (TID 1)
+java.lang.OutOfMemoryError: Java heap space
+24/07/12 21:00:43 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[Executor task launch worker for task 0.0 in stage 1.0 (TID 1),5,main]
+java.lang.OutOfMemoryError: Java heap space
+24/07/12 21:00:43 WARN TaskSetManager: Lost task 0.0 in stage 1.0 (TID 1) (bc18817f1332 executor driver): java.lang.OutOfMemoryError: Java heap space
+
+24/07/12 21:00:43 ERROR TaskSetManager: Task 0 in stage 1.0 failed 1 times; aborting job
+24/07/12 21:00:43 ERROR AppendDataExec: Data source write support IcebergBatchWrite(table=demo.icedsparkcatalog.mydb.meteorites, format=PARQUET) is aborting.
+24/07/12 21:00:43 ERROR AppendDataExec: Data source write support IcebergBatchWrite(table=demo.icedsparkcatalog.mydb.meteorites, format=PARQUET) aborted.
+[MetaKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_interpreter.py", line 414, in interpret
+    res = self.jimain.interpret(code, False)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/opt/spark/python/pyspark/errors/exceptions/captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o58.interpret
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 775, in execute_request
+    reply_content = self.do_execute(**do_execute_args)
+  File "/usr/local/lib/python3.9/site-packages/metakernel/_metakernel.py", line 397, in do_execute
+    retval = self.do_execute_direct(code)
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_kernel.py", line 141, in do_execute_direct
+    res = self._scalamagic.eval(code.strip(), raw=False)
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_magic.py", line 159, in eval
+    res = intp.interpret(code.strip())
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_interpreter.py", line 429, in interpret
+    self.jbyteout.reset()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+[MetaKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_interpreter.py", line 414, in interpret
+    res = self.jimain.interpret(code, False)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 775, in execute_request
+    reply_content = self.do_execute(**do_execute_args)
+  File "/usr/local/lib/python3.9/site-packages/metakernel/_metakernel.py", line 397, in do_execute
+    retval = self.do_execute_direct(code)
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_kernel.py", line 141, in do_execute_direct
+    res = self._scalamagic.eval(code.strip(), raw=False)
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_magic.py", line 159, in eval
+    res = intp.interpret(code.strip())
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_interpreter.py", line 429, in interpret
+    self.jbyteout.reset()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+[MetaKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_interpreter.py", line 414, in interpret
+    res = self.jimain.interpret(code, False)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 775, in execute_request
+    reply_content = self.do_execute(**do_execute_args)
+  File "/usr/local/lib/python3.9/site-packages/metakernel/_metakernel.py", line 397, in do_execute
+    retval = self.do_execute_direct(code)
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_kernel.py", line 141, in do_execute_direct
+    res = self._scalamagic.eval(code.strip(), raw=False)
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_magic.py", line 159, in eval
+    res = intp.interpret(code.strip())
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_interpreter.py", line 429, in interpret
+    self.jbyteout.reset()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+[MetaKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_interpreter.py", line 414, in interpret
+    res = self.jimain.interpret(code, False)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 775, in execute_request
+    reply_content = self.do_execute(**do_execute_args)
+  File "/usr/local/lib/python3.9/site-packages/metakernel/_metakernel.py", line 397, in do_execute
+    retval = self.do_execute_direct(code)
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_kernel.py", line 141, in do_execute_direct
+    res = self._scalamagic.eval(code.strip(), raw=False)
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_magic.py", line 159, in eval
+    res = intp.interpret(code.strip())
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_interpreter.py", line 429, in interpret
+    self.jbyteout.reset()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+[MetaKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_interpreter.py", line 414, in interpret
+    res = self.jimain.interpret(code, False)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 775, in execute_request
+    reply_content = self.do_execute(**do_execute_args)
+  File "/usr/local/lib/python3.9/site-packages/metakernel/_metakernel.py", line 397, in do_execute
+    retval = self.do_execute_direct(code)
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_kernel.py", line 141, in do_execute_direct
+    res = self._scalamagic.eval(code.strip(), raw=False)
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_magic.py", line 159, in eval
+    res = intp.interpret(code.strip())
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_interpreter.py", line 429, in interpret
+    self.jbyteout.reset()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+[MetaKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_interpreter.py", line 414, in interpret
+    res = self.jimain.interpret(code, False)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+    await result
+  File "/usr/local/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 775, in execute_request
+    reply_content = self.do_execute(**do_execute_args)
+  File "/usr/local/lib/python3.9/site-packages/metakernel/_metakernel.py", line 397, in do_execute
+    retval = self.do_execute_direct(code)
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_kernel.py", line 141, in do_execute_direct
+    res = self._scalamagic.eval(code.strip(), raw=False)
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_magic.py", line 159, in eval
+    res = intp.interpret(code.strip())
+  File "/usr/local/lib/python3.9/site-packages/spylon_kernel/scala_interpreter.py", line 429, in interpret
+    self.jbyteout.reset()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1036, in send_command
+    connection = self._get_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 284, in _get_connection
+    connection = self._create_new_connection()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 291, in _create_new_connection
+    connection.connect_to_java_server()
+  File "/opt/spark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 438, in connect_to_java_server
+    self.socket.connect((self.java_address, self.java_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+[I 2024-07-12 21:01:09.094 ServerApp] Saving file at /notebooks/delmultiplecols.ipynb
